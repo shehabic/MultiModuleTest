@@ -53,6 +53,24 @@ jar {
     from sourceSets.datastore.output
 }
 
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            repository(url: "file://Users/shehabic/Desktop/repos")
+            addFilter('api') {artifact, file ->
+                artifact.name == 'api'
+            }
+            addFilter('core') {artifact, file ->
+                artifact.name == 'core'
+            }
+
+            addFilter('datastore') {artifact, file ->
+                artifact.name == 'datastore'
+            }
+        }
+    }
+}
+
 
 subprojects {
     apply plugin: 'maven'
