@@ -21,7 +21,7 @@ allprojects {
 }
 
 ext {
-    versionName = "1.0.9"
+    versionName = "1.0.10"
     versionCode = 2
 }
 
@@ -36,7 +36,7 @@ sourceSets {
 }
 
 sourceSets.all { set ->
-    def jarTask = task("${set.name}Jar", type: Zip) {
+    def jarTask = task("${set.name}Zip", type: Zip) {
         baseName = "$set.name"
         from set.output
     }
@@ -48,7 +48,7 @@ sourceSets.all { set ->
         classpath += configurations.compile
     }
 
-    def javadocJar = task(type: Jar, dependsOn: javadoc) {
+    def javadocJar = task(type: Zip, dependsOn: javadoc) {
         classifier = "${set.name}"
         from javadoc.destinationDir
     }
