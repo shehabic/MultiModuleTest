@@ -21,7 +21,7 @@ allprojects {
 }
 
 ext {
-    versionName = "1.0.7"
+    versionName = "1.0.8"
     versionCode = 2
 }
 
@@ -38,7 +38,6 @@ sourceSets {
 sourceSets.all { set ->
     def jarTask = task("${set.name}Jar", type: Jar) {
         baseName = "$set.name"
-        classifier = "$set.name"
         from set.output
     }
 
