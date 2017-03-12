@@ -21,7 +21,7 @@ allprojects {
 }
 
 ext {
-    versionName = "1.0.8"
+    versionName = "1.0.9"
     versionCode = 2
 }
 
@@ -36,7 +36,7 @@ sourceSets {
 }
 
 sourceSets.all { set ->
-    def jarTask = task("${set.name}Jar", type: Jar) {
+    def jarTask = task("${set.name}Jar", type: Zip) {
         baseName = "$set.name"
         from set.output
     }
