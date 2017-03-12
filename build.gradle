@@ -48,9 +48,23 @@ sourceSets.all { set ->
         classifier = "${set.name}"
         from javadoc.destinationDir
     }
-
     artifacts {
         archives jarTask
         archives javadocJar
+    }
+}
+
+jar {
+    from sourceSets.api.output
+    from sourceSets.datastore.output
+    from sourceSets.core.output
+}
+
+// this step is necessary when installing both jars in the local maven repository
+install {
+    repositories.mavenInstaller {
+        addFilter('api') { artifact, file -> artifact.name.endsWith('api') }
+        addFilter('core') { artifact, file -> artifact.name.endsWith('core') }
+        addFilter('datastore') { artifact, file -> artifact.name.endsWith('datastore') }
     }
 }
