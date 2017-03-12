@@ -6,9 +6,9 @@ An example of how to generate multiple-artifacts (one per module) in a gradle pr
 
 e.g using jitpack.io
 
-1-Make sure your update the version code in the main project's gradle.build to e.g. *1.0.5*
-2-Make sure you create the tag/release name in github
-3-Goto jitpack.io and search for your repo and let it build.
+1. Make sure you update the version code in the main project's gradle.build to e.g. *1.0.5*
+2. Make sure you create the tag/release name in github
+3. Visit jitpack.io and search for your repo and let it build.
 
 ```
 dependencies {
