@@ -37,30 +37,20 @@ sourceSets.all { set ->
         from set.output
     }
 
+    def javadoc = task(type: Javadoc) {
+        failOnError  false
+        source = android.sourceSets.main.java.sourceFiles
+        classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
+        classpath += configurations.compile
+    }
+
+    def javadocJar = task(type: Jar, dependsOn: javadoc) {
+        classifier = "${set.name}javadoc"
+        from javadoc.destinationDir
+    }
+
     artifacts {
         archives jarTask
-    }
-}
-
-jar {
-    from sourceSets.api.output
-    from sourceSets.core.output
-    from sourceSets.datastore.output
-}
-
-uploadArchives {
-    repositories {
-        mavenDeployer {
-            addFilter('api') {artifact, file ->
-                artifact.name == 'api'
-            }
-            addFilter('core') {artifact, file ->
-                artifact.name == 'core'
-            }
-
-            addFilter('datastore') {artifact, file ->
-                artifact.name == 'datastore'
-            }
-        }
+        archives javadocJar
     }
 }
