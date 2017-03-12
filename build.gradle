@@ -45,7 +45,7 @@ sourceSets.all { set ->
     }
 
     def javadocJar = task(type: Jar, dependsOn: javadoc) {
-        classifier = "${set.name}javadoc"
+        classifier = "${set.name}"
         from javadoc.destinationDir
     }
 
