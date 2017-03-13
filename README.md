@@ -12,8 +12,8 @@ e.g using jitpack.io
 
 ```
 dependencies {
-    compile 'com.github.shehabix.MultiModuleTest:core:v.1.0.5'
-    compile 'com.github.shehabix.MultiModuleTest:api:v.1.0.5'
-    compile 'com.github.shehabix.MultiModuleTest:datastore:v.1.0.5'
+    compile 'com.github.shehabix.MultiModuleTest:core:v.1.0.9'
+    compile 'com.github.shehabix.MultiModuleTest:api:v.1.0.9'
+    compile 'com.github.shehabix.MultiModuleTest:datastore:v.1.0.9'
 }
 ```
