@@ -16,22 +16,6 @@ install {
             artifactId POM_ARTIFACT_ID
             packaging POM_PACKAGING
             description POM_DESCRIPTION
-//            url projectUrl
-
-//            scm {
-//                url scmUrl
-//                connection scmConnection
-//                developerConnection scmDeveloperConnection
-//            }
-//
-//            licenses projectLicenses
-//
-//            developers {
-//                developer {
-//                    id developerId
-//                    name developerName
-//                }
-//            }
         }
     }
 }
