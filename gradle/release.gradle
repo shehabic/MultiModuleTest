@@ -1,2 +1,4 @@
 // Common Android tasks for all releases that generate Javadocs, sources, etc.
+// Set up the Android Maven publication (POM etc.)
+apply from: rootProject.file('gradle/android-maven-install.gradle')
 apply from: rootProject.file('gradle/android-tasks.gradle')
